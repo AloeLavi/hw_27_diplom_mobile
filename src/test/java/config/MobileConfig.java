@@ -1,7 +1,7 @@
 package config;
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/${environment}.properties"})
+@Config.Sources({"classpath:${environment}.properties"})
 public interface MobileConfig extends Config {
 
 
