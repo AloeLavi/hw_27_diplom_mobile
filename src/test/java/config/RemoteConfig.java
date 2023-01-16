@@ -1,7 +1,5 @@
 package config;
 import org.aeonbits.owner.Config;
-@Config.LoadPolicy(Config.LoadType.MERGE)
-
 @Config.Sources({
         "classpath:properties/remote.properties"
 })
@@ -33,7 +31,6 @@ public interface RemoteConfig extends Config {
     String name();
 
     @Key("baseUrl")
-    @DefaultValue("http://hub.browserstack.com/wd/hub")
     String baseUrl();
 
 

@@ -21,9 +21,6 @@ public class TestBase {
 
         String deviceHost = System.getProperty("deviceHost",  "local");
 
-
-        System.out.println("ATTENTION, config: " + deviceHost);
-
       switch (deviceHost) {
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
@@ -32,8 +29,6 @@ public class TestBase {
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
                 break;
         }
-
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
 
         Configuration.browserSize = null;
     }
