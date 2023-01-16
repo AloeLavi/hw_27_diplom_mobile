@@ -7,7 +7,6 @@
 - [Запуск тестов из терминала](#computer-запуск-тестов-из-терминала)
 - [Анализ результатов: Allure](#-анализ-результатов-allure)
 - [Видеопримеры прохождения тестов](#-пример-видео-выполнения-теста-в-browserstack)
-- [Отчет в Telegram](#-уведомления-в-telegram-с-использованием-бота)
 
 
 ## :rocket: Технологии и инструменты
@@ -24,7 +23,6 @@
 <img width="6%" title="JUnit5" src="images/logo/android-studio.png">
 <img width="6%" title="GitHub" src="images/logo/github.png">
 <img width="6%" title="Jenkins" src="images/logo/jenkins.png">
-<img width="6%" title="Telegram" src="images/logo/telegram.png">
 <img width="6%" title="selenoid" src="images/logo/selenoid.png">
 
 </p>
@@ -51,6 +49,7 @@ clean test
 ```
 
 ### <img src="images/logo/jenkins.png" width="25" height="25"  alt="Allure"/></a>	Страница сборки в [Jenkins](https://jenkins.autotests.cloud/job/15-aloe_lavi-hw_27_diplom_mobile/)
+Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать*</strong></code>.
 <p align="center">
 <img title="allure_main" src="images/pictures/jenkins_page.png">
 </p>
@@ -80,10 +79,4 @@ clean test
 В Browserstack можно посмотреть видео прогона каждого теста: 
 <p align="center">
   <img title="Selenoid Video" src="images/video/browserstack-video-preview.gif">
-</p>
-
-## <img src="images/logo/telegram.png" width="25" height="25"  alt="Telegram"/></a> Уведомления в Telegram с использованием бота
-
-<p align="center">
-<img title="Telegram Notifications" src="images/pictures/telegram.png">
 </p>
