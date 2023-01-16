@@ -20,7 +20,7 @@ public class TestBase {
     @BeforeAll
     public static void setup() {
 
-        System.out.println(config.environment());
+        System.out.println("ATTENTION, config: " + config.environment());
 
        switch (config.environment()) {
             case "local":
