@@ -49,32 +49,34 @@ clean test
 -DdeviceHost=remote
 ```
 
-### <img src="images/logo/jenkins.png" width="25" height="25"  alt="Allure"/></a>	Страница сборки в Jenkins
+### <img src="images/logo/jenkins.png" width="25" height="25"  alt="Allure"/></a>	Страница сборки в [Jenkins](https://jenkins.autotests.cloud/job/15-aloe_lavi-hw_27_diplom_mobile/)
 <p align="center">
 <img title="allure_main" src="images/pictures/jenkins_page.png">
 </p>
 
-## <img src="images/logo/allure.png" width="25" height="25"  alt="Allure"/></a> Allure отчет
+## <img src="images/logo/allure.png" width="25" height="25"  alt="Allure"/></a> Анализ результатов: Allure
 
 ### Главная страница Allure-отчета
+Можно увидеть количество и результат выполнения тестов, а также статистику прошлых запусков:
 <p align="center">
 <img title="allure_main" src="images/pictures/allure_main.png">
 </p>
 
 ### Страница отдельного теста
 
+На странице теста в Allure можно увидеть:
+- содержание теста (шаги) 
+- результат выполнения каждого шага и теста целиком
+
 <p align="center">
 <img title="allure_test" src="images/pictures/allure test.png">
 </p>
 
-> К каждому тесту прилагается скриншот последнего шага, исходный код страницы, а в случае падения тестов 
-> выводится подробная ошибка
+К каждому тесту прилагается: 
+- скриншот последнего действия
+- page source
+- в случае падения тестов выводится подробный текст ошибки 
 
-## <img src="images/logo/telegram.png" width="25" height="25"  alt="Telegram"/></a> Уведомления в Telegram с использованием бота
-
-<p align="center">
-<img title="Telegram Notifications" src="images/pictures/telegram.png">
-</p>
 
 ## <img src="images/logo/browserstack.png" width="25" height="25"  alt="Browserstack"/></a> Пример видео выполнения теста в Browserstack
 
@@ -83,4 +85,8 @@ clean test
   <img title="Selenoid Video" src="images/video/browserstack-video-preview.gif">
 </p>
 
+## <img src="images/logo/telegram.png" width="25" height="25"  alt="Telegram"/></a> Уведомления в Telegram с использованием бота
 
+<p align="center">
+<img title="Telegram Notifications" src="images/pictures/telegram.png">
+</p>
