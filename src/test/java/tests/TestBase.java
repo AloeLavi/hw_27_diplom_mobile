@@ -20,6 +20,8 @@ public class TestBase {
     @BeforeAll
     public static void setup() {
 
+        System.out.println(config.environment());
+
        switch (config.environment()) {
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
