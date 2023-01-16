@@ -12,20 +12,5 @@ public interface LocalConfig extends Config {
     @Key ("osVersion")
     String osVersion();
 
-    @Key("project")
-    String project();
-
-    @Key("build")
-    String build();
-
-    @Key("name")
-    String name();
-
-
-    @Key("environment")
-    @DefaultValue("remote")
-    String environment();
-
-
 
 }

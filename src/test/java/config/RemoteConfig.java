@@ -4,11 +4,9 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:properties/remote.properties"
-
 })
 
 public interface RemoteConfig extends Config {
-
 
     @Key("user")
     String user();
@@ -37,10 +35,6 @@ public interface RemoteConfig extends Config {
     @Key("baseUrl")
     @DefaultValue("http://hub.browserstack.com/wd/hub")
     String baseUrl();
-
-    @Key("deviceHost")
-    @DefaultValue("remote")
-    String deviceHost();
 
 
 }

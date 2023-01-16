@@ -15,14 +15,16 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public class TestBase {
-    static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     @BeforeAll
     public static void setup() {
 
-        System.out.println("ATTENTION, config: " + config.deviceHost());
+        String deviceHost = System.getProperty("deviceHost",  "local");
 
-      switch (config.deviceHost()) {
+
+        System.out.println("ATTENTION, config: " + deviceHost);
+
+      switch (deviceHost) {
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
                 break;
