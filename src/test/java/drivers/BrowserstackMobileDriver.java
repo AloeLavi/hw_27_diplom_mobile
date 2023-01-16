@@ -14,6 +14,8 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
+    static MobileConfig config = ConfigFactory.create(MobileConfig.class, System.getProperties());
+
     public static URL getBrowserstackUrl() {
         try {
             return new URL(config.baseUrl());
@@ -21,7 +23,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
             throw new RuntimeException(e);
         }
     }
-    static MobileConfig config = ConfigFactory.create(MobileConfig.class, System.getProperties());
 
     @SneakyThrows
     @Override
@@ -47,6 +48,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
-        return new RemoteWebDriver(new URL("http://hub.browserstack.com/wd/hub"), mutableCapabilities);
+       //  return new RemoteWebDriver(new URL("http://hub.browserstack.com/wd/hub"), mutableCapabilities);
+        return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
 }

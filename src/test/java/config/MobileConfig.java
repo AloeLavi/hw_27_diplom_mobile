@@ -30,6 +30,7 @@ public interface MobileConfig extends Config {
     String name();
 
     @Key("baseUrl")
+    @DefaultValue("http://hub.browserstack.com/wd/hub")
     String baseUrl();
 
     @Key("environment")
