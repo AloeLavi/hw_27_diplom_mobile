@@ -22,7 +22,7 @@ public class TestBase {
 
         System.out.println("ATTENTION, config: " + config.environment());
 
-       switch (config.environment()) {
+      switch (config.environment()) {
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
                 break;
@@ -30,6 +30,9 @@ public class TestBase {
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
                 break;
         }
+
+        Configuration.browser = BrowserstackMobileDriver.class.getName();
+
         Configuration.browserSize = null;
     }
 

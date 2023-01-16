@@ -1,10 +1,7 @@
 package config;
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        "classpath:browserstack.properties"
-
-})
+@Config.Sources({"classpath:config/${environment}.properties"})
 public interface MobileConfig extends Config {
 
 
@@ -36,7 +33,7 @@ public interface MobileConfig extends Config {
     String baseUrl();
 
     @Key("environment")
-    @DefaultValue("local")
+    @DefaultValue("remote")
     String environment();
 
 }
