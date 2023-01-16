@@ -1,4 +1,4 @@
-# Проект по автоматизации тестирования веб-приложения МойСклад
+# Проект по автоматизации тестирования мобильного приложения Wikipedia
 
 ## :page_with_curl:	Содержание
 
@@ -18,34 +18,21 @@
 <img width="6%" title="Allure Report" src="images/logo/allure.png">
 <img width="6%" title="Gradle" src="images/logo/gradle.png">
 <img width="6%" title="JUnit5" src="images/logo/junit5.png">
+<img width="6%" title="JUnit5" src="images/logo/browserstack.png">
+<img width="6%" title="JUnit5" src="images/logo/appium.png">
+<img width="6%" title="JUnit5" src="images/logo/android-studio.png">
 <img width="6%" title="GitHub" src="images/logo/github.png">
 <img width="6%" title="Jenkins" src="images/logo/jenkins.png">
 <img width="6%" title="Telegram" src="images/logo/telegram.png">
 <img width="6%" title="selenoid" src="images/logo/selenoid.png">
-<img width="6%" title="RestAssured" src="images/logo/rest_assured.png">
-
 
 </p>
 
 ## 	:heavy_check_mark:	Реализованные проверки
 
-- WEB
-  - Проверки документа "Заказ поставщику"
-    - Создание документа
-    - Копирование документа
-    - Попытка создания без обязательных полей
-  - Проверки документа "Заказ покупателя"
-    - Создание документа
-    - Копирование документа
-    - Попытка создания без обязательных полей
-- API
-  - Проверки сущности "Страна"
-    - Просмотр
-    - Создание с обязательными полями
-    - Создание со всеми доступными полями
-    - Попытка создания без обязательных полей
-    - Редактирование
-    - Удаление (проверяется косвенно во всех тестах)
+- Поиск
+- Открытие статьи
+- Добавление нового языка
 
 
 ## 	:computer: Запуск тестов из терминала
@@ -58,24 +45,9 @@ gradle clean test
 
 ### :earth_asia: Удаленный запуск тестов
 ```
-clean
-test
--Dbrowser=${browser}
--DbrowserVersion=${browserVersion}
--DbrowserSize=${browserSize}
--Dremote=${remoteUrl}
+clean test
+-DdeviceHost=remote
 ```
-
-### :clipboard:	Параметры сборки
-
->
-> <code>browser</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
->
-> <code>browserVersion</code> – версия браузера, в которой будут выполняться тесты (_по умолчанию - <code>100</code>_).
->
-> <code>browserSize</code> – размер окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1440x1080</code>_).
-> 
-> <code>remoteUrl</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 ### <img src="images/logo/jenkins.png" width="25" height="25"  alt="Allure"/></a>	Страница сборки в Jenkins
 <p align="center">
@@ -95,22 +67,20 @@ test
 <img title="allure_test" src="images/pictures/allure test.png">
 </p>
 
+> К каждому тесту прилагается скриншот последнего шага, исходный код страницы, а в случае падения тестов 
+> выводится подробная ошибка
+
 ## <img src="images/logo/telegram.png" width="25" height="25"  alt="Telegram"/></a> Уведомления в Telegram с использованием бота
 
 <p align="center">
 <img title="Telegram Notifications" src="images/pictures/telegram.png">
 </p>
 
-## :clapper: Пример видео выполнения теста в Selenoid
+## <img src="images/logo/browserstack.png" width="25" height="25"  alt="Browserstack"/></a> Пример видео выполнения теста в Browserstack
 
-> К каждому тесту в отчете прилагается видео. Пример такого видео:
+> В Browserstack можно посмотреть видео прогона каждого теста: 
 <p align="center">
-  <img title="Selenoid Video" src="images/video/test.gif">
+  <img title="Selenoid Video" src="images/video/browserstack-video-preview.gif">
 </p>
 
-## :speech_balloon:	Примечания по реализации
 
-- **В идеале:** нужно было бы создавать отдельный аккаунт для каждого теста, чтобы тесты были независимы.
-
-- **Как сделано**: не хотелось мусорить в сервисе, поэтому я использовала один тестовый аккаунт для всех тестов.
-  После каждого теста удаляются созданные данные, а также тесты не могут быть запущены параллельно.
