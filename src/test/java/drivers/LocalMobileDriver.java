@@ -1,9 +1,12 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.LocalConfig;
+import config.RemoteConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import lombok.SneakyThrows;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
@@ -16,6 +19,9 @@ import java.net.URL;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 
 public class LocalMobileDriver implements WebDriverProvider {
+
+    static LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
+
 
     public static URL getAppiumServerUrl() {
         try {
@@ -35,8 +41,8 @@ public class LocalMobileDriver implements WebDriverProvider {
 
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName("android")
-                .setDeviceName("Pixel 4 API 30")
-                .setPlatformVersion("11.0")
+                .setDeviceName(config.device())
+                .setPlatformVersion(config.osVersion())
                 .setApp(getAppPath())
                 .setAppPackage("org.wikipedia.alpha")
                 .setAppActivity("org.wikipedia.main.MainActivity");

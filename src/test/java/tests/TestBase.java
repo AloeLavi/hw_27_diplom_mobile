@@ -1,6 +1,6 @@
 package tests;
 import com.codeborne.selenide.Configuration;
-import config.MobileConfig;
+import config.RemoteConfig;
 import drivers.BrowserstackMobileDriver;
 import drivers.LocalMobileDriver;
 import helpers.Attach;
@@ -15,14 +15,14 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public class TestBase {
-    static MobileConfig config = ConfigFactory.create(MobileConfig.class, System.getProperties());
+    static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     @BeforeAll
     public static void setup() {
 
-        System.out.println("ATTENTION, config: " + config.environment());
+        System.out.println("ATTENTION, config: " + config.deviceHost());
 
-      switch (config.environment()) {
+      switch (config.deviceHost()) {
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
                 break;

@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.MobileConfig;
+import config.RemoteConfig;
 import lombok.SneakyThrows;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    static MobileConfig config = ConfigFactory.create(MobileConfig.class, System.getProperties());
+    static RemoteConfig config = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
     public static URL getBrowserstackUrl() {
         try {
